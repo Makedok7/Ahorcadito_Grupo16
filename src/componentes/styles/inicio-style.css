@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Balsamiq+Sans&display=swap');
+.container {
+    background-color: #0eccd3;
+    border-radius: 25px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.Titulo {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: Lobster, "Helvetica Neue", Helvetica, sans-serif;
+    padding: 1px;
+}
+
+#nav {
+    background-color: rgb(44, 44, 44);
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: Acme, Helvetica, sans-serif;
+    padding: 1px 40px;
+}
+
+#nav :hover {
+    background-color: #0eccd3;
+    color: rgb(41, 41, 41);
+}
+
+#juego {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: Lobster, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.boton {
+    display: inline-flex;
+    border-radius: 20px;
+    background-color: darkslategray;
+    color: aliceblue;
+    width: 120px;
+    height: 70px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .3s ease all;
+}
+
+.boton:hover {
+    background-color: rgb(226, 226, 226);
+    color: rgb(34, 34, 34);
+}
+
+#img1 {
+    width: 400px;
+    height: 400px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 150px;
+    border: 5px rgb(0, 0, 0);
+    text-align: center;
+    color: rgb(39, 39, 39);
+    font-family: Lobster, "Helvetica Neue", Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    flex: 0.65;
+    text-align: left;
+}
+
+aside {
+    flex: 0.35;
+    text-align: center;
+    padding: 5%;
+    font-family: Balsamiq Sans;
+    font-size: 20px;
+}
