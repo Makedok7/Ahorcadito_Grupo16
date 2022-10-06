@@ -1,81 +1,92 @@
 import React, { useState } from 'react'
 import Nav from './Nav'
-import "./styles/Juego.css"
+import "../styles/Juego.css"
+import letras from '../json/letras.json'
+import palabras from '../json/palabras.json'
 
 export default function Juego() {
-    const [countJugador1, setCountJugador1] = useState(0);
-    const [countJugador2, setCountJugador2] = useState(0);
-    const [eleccionJugador1, setEleccionJugador1] = useState(0);
-    const [eleccionJugador2, setEleccionJugador2] = useState(0);
-    const [resultado, setResultado] = useState("_");
-    let ganador = "";
 
-    //Funcion del boton Jugar
-    function jugar() {
-        setEleccionJugador2(Math.floor(Math.random() * 3))//Eleccion al azar del jugador2 o "maquina"
-        ganador = (verificarGanador(eleccionJugador1, eleccionJugador2))
-        setResultado(ganador)
-        contadorJugadores()
-        cambiarjugador2(eleccionJugador2)
-    };
-    //Funcion para ir aumentando el puntaje de los jugadores
-    function contadorJugadores() {
-        if (ganador == "Jugador1") {
-            setCountJugador1(countJugador1 + 1)
+    const [palabraOriginal, setPalabraOriginal] = useState([])
+    const [palabraEscondida, setPalabraEscondida] = useState(["Genere una Palabra"])
+    const [intentos, setIntentos] = useState(1)
+
+    function generarPalabra() {
+        let palabraRandom = Array.from(palabras[Math.floor(Math.random() * palabras.length)].palabra)
+        setPalabraOriginal([...palabraRandom])
+        esconderPalabra(palabraRandom)
+        console.log(palabraOriginal)
+        restablecerBotones()
+    }
+
+    function esconderPalabra(palabra) {
+        setPalabraEscondida(new Array(palabra.length).fill("_"))
+        console.log(palabraEscondida)
+    }
+
+    function compararLetra(letra) {
+        console.log(letra)
+        while (palabraOriginal.includes(letra)) {
+            palabraEscondida[palabraOriginal.indexOf(letra)] = letra
+            palabraOriginal[palabraOriginal.indexOf(letra)] = "_"
         }
-        else if (ganador == "Jugador2") {
-            setCountJugador2(countJugador2 + 1)
+        console.log(palabraOriginal)
+        console.log(palabraEscondida)
+        setPalabraEscondida([...palabraEscondida])
+        comprobarResultado()
+        cambiarBoton(letra)
+    }
+
+    function comprobarResultado() {
+        if (!palabraEscondida.includes("_")) {
+            console.log("gano")
+        }
+        if (intentos == 5) {
+            console.log("falta")
         }
     }
-    //Control del ganador
-    function verificarGanador(jugador1, jugador2) {
-        // 0 = Piedra, 1 = Tijeras, 2 = Papel
-        if (jugador1 == 0 && jugador2 == 1) {
-            return ("Jugador1")
-        }
-        else if (jugador1 == 1 && jugador2 == 2) {
-            return ("Jugador1")
-        }
-        else if (jugador1 == 2 && jugador2 == 0) {
-            return ("Jugador1")
-        }
-        else if (jugador1 == jugador2) {
-            return ("Empate")
+
+    function cambiarBoton(letra) {
+        let boton = document.getElementById(letra)
+        boton.disabled = true
+        if (palabraEscondida.includes(letra)) {
+            boton.className = 'btn btn-success mx-1'
         }
         else {
-            return ("Jugador2")
+            boton.className = 'btn btn-danger mx-1'
+            setIntentos(intentos + 1)
+            console.log(intentos)
         }
     }
-    //Funcion para cambiar la imagen segun sobre la que se clickeo y pasarle valores para la eleccion del jugador 1
-    function cambiarJugador1(eleccion, key, alt) {
-        document.getElementById("jugador1").src = eleccion;
-        document.getElementById("jugador1").key = key;
-        document.getElementById("jugador1").alt = alt;
-        setEleccionJugador1(document.getElementById("jugador1").key)
-    }
 
-    /*Cambio de las imagenes y la eleccion del jugador 2 o "maquina"
-    document.getElementByID() busca el elemento con la id que se le pase*/
-
-    function cambiarjugador2(eleccionJugador2) {
-        if (eleccionJugador2 == 0) {
-            document.getElementById("jugador2").src = "../images/piedra.png";
-            document.getElementById("jugador2").alt = "piedra";
-        }
-        else if (eleccionJugador2 == 1) {
-            document.getElementById("jugador2").src = "../images/tijera.png";
-            document.getElementById("jugador2").alt = "tijeras";
-        }
-        else {
-            document.getElementById("jugador2").src = "../images/papel.png";
-            document.getElementById("jugador2").alt = "papel";
+    function restablecerBotones() {
+        setIntentos(1)
+        {
+            letras.map((boton) => {
+                document.getElementById(boton.letra).disabled = false
+                document.getElementById(boton.letra).className = 'btn btn-info mx-1'
+            }
+            )
         }
     }
 
     return (
-
         <div className="bg-dark">
             {Nav()}
+            <div>
+                <h1 className='bg-dark text-center text-info'>
+                    {palabraEscondida.join(" ")}
+                </h1>
+                <button type='button' className='btn btn-info ' onClick={() => generarPalabra()}>
+                    Generar Palabra
+                </button>
+            </div>
+            <div id='botones'>
+                {letras.map((boton, i) =>
+                    <button key={i} type="button" className="btn btn-info mx-1" id={boton.letra} disabled={false} onClick={() => { compararLetra(boton.letra) }}>
+                        {boton.letra}
+                    </button>
+                )}
+            </div>
         </div>
     )
 }

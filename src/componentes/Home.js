@@ -1,5 +1,5 @@
 import Nav from './Nav'
-import "./styles/inicio-style.css"
+import "../styles/inicio-style.css"
 import { Link } from 'react-router-dom'
 
 export default function Home() {
