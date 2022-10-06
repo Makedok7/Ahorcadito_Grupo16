@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom"
 import Nav from './Nav';
-import "./styles/DesarrolladoresStyle.css"
+import "../styles/DesarrolladoresStyle.css";
 
 export default function Desarrolladores() {
     const users = [
