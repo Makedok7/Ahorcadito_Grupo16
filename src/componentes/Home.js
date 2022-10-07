@@ -9,7 +9,7 @@ export default function Home() {
             <div id="div1" className="container">
                 <div className="Titulo" id="titulo">
                     <header>
-                        <h1>Juego Grupo 16</h1>
+                        <h1>Grupo 16</h1>
                     </header>
                 </div>
                 <dl id="nav">
@@ -28,11 +28,12 @@ export default function Home() {
                 </div>
                 <div className="row ">
                     <section id="img1" className='col'>
-                        <img src="..." width="350" height="350" alt="LogoJuego" className='img-fluid rounded' />
+                        <img src="./public/images/LogoJuego" width="350" height="350" alt="LogoJuego" className='img-fluid rounded' />
                     </section>
                     <aside id="reglas" className='col '>
                         <h2>Reglas</h2>
                         <ul className='list-inline'>
+                            <li>Se mostrará el inicio y el fin de una palabra, y tienes que adivinar cuál es (LETRA por LETRA).</li>
                         </ul>
                     </aside>
                 </div>
