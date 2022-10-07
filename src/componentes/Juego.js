@@ -9,41 +9,41 @@ export default function Juego() {
     const [palabraOriginal, setPalabraOriginal] = useState([])
     const [palabraEscondida, setPalabraEscondida] = useState([])
     const [intentos, setIntentos] = useState(1)
-    let auxiliarIntentos = 0
+    //El auxiliar se usa para tener un mejor control de los cambios del ahorcadito por los intentos y sus comprobaciones
+    let auxiliarIntentos = 0 
 
     useEffect(() => {
         generarPalabra();
     }, []);
 
     function generarPalabra() {
-        //elegi una palabra al azar del json palabras y la asigna a palabraOriginal 
+        //Se elige una palabra al azar del json palabras y la asigna a palabraOriginal 
         let palabraRandom = Array.from(palabras[Math.floor(Math.random() * palabras.length)].palabra)
         setPalabraOriginal([...palabraRandom])
-        //manda la misma palabra elegida al azar
+        //Manda la misma palabra elegida al azar
         esconderPalabra(palabraRandom)
         restablecerJuego()
     }
 
     function esconderPalabra(palabra) {
-        //convierte la palabra en un array lleno de "_"
+        //Convierte la palabra en un array lleno de "_"
         setPalabraEscondida(new Array(palabra.length).fill("_"))
     }
 
     function compararLetra(letra) {
-        /*compara si la palabraOriginal tiene la letra(enviada al apretar el boton con letra) 
+        /*Compara si la palabraOriginal tiene la letra(enviada al apretar el boton con letra) 
         y va cambiando ambas palabras, asignando la letra a palabra escondida y elminandola de palabra original*/
         while (palabraOriginal.includes(letra)) {
             palabraEscondida[palabraOriginal.indexOf(letra)] = letra
             palabraOriginal[palabraOriginal.indexOf(letra)] = "_"
         }
-        //asigna a palabra escondida una copia de la palabra escondida modificada
+        //Asigna a palabra escondida una copia de la palabra escondida modificada
         setPalabraEscondida([...palabraEscondida])
-        comprobarResultado()
         cambiarBoton(letra)
         mostrarAhorcadito()
     }
 
-    function comprobarResultado() {
+    function comprobarResultado(auxiliarIntentos) {
         //Si la palabra escondida tiene puras letras, en ese caso se gana
         if (!palabraEscondida.includes("_") && palabraEscondida.length == palabraOriginal.length) {
             document.getElementById("resultado").className = "alert alert-success"
@@ -51,7 +51,7 @@ export default function Juego() {
             desactivarBotones()
         }
         //En el caso de fallar 6 veces se pierde, los fallos los determina el boton en cambiarBoton()
-        if (intentos == 6) {
+        if (intentos == 6 && auxiliarIntentos == 6) {
             document.getElementById("resultado").className = "alert alert-danger"
             document.getElementById("resultadoTexto").innerHTML = "PERDISTE"
             desactivarBotones()
@@ -65,14 +65,18 @@ export default function Juego() {
         //Si la letra del boton es parte de la palabra escondida que se modifico en comprobarResultado() el boton cambia a verde
         if (palabraEscondida.includes(letra)) {
             boton.className = 'btn btn-success mx-1'
-            auxiliarIntentos = intentos - 1
+            //El auxiliar se resta en 1 para que la imagen no se cambie debido a una actualizacion de intentos
+            auxiliarIntentos = intentos - 1 
         }
         //En caso contrario se cambia a rojo y se suma un intento
         else {
             boton.className = 'btn btn-danger mx-1'
             setIntentos(intentos + 1)
+            //Se iguala para llevar un control de intentos
             auxiliarIntentos = intentos
         }
+        //Se manda el auxiliar sobre el que se comprueba que esten en el mismo valor para determinar un resultado
+        comprobarResultado(auxiliarIntentos)
     }
 
     function restablecerJuego() {
