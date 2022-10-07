@@ -1,11 +1,20 @@
 [
     {
-        "palabra":"PALABRAA"
+        "palabra":"HORMIGA"
     },
     {
-        "palabra":"PALABRAB"
+        "palabra":"PERRO"
     },
     {
-        "palabra":"PALABRAC"
+        "palabra":"ELEFANTE"
+    },
+    {
+        "palabra":"CASA"
+    },
+    {
+        "palabra":"CALLE"
+    },
+    {
+        "palabra":"CIUDAD"
     }
 ]
