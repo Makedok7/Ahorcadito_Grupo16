@@ -1,0 +1,46 @@
+
+[
+    
+    {
+        "name": "Abalos, Alan Nicolas",
+        "photo":"https://robohash.org/user1",
+        "interests" : "hola tengo 22 años soy estudiante de la unju sueño con hacer videojuegos.",
+        "linktoGit" : "https://github.com/Alancrack13",
+        "years":"Numero edad"
+    },
+    {
+        "name": "Cabrera, Fabricio Gaston",
+        "photo":"https://robohash.org/user2",
+        "interests" : "Fan del Anime y los juegos Hack and Slash, vicioso de toda la vida.",
+        "linktoGit" : "https://github.com/FaBriZiiTo",
+        "years":"28 Años"
+    },
+    {
+        "name": "Cordoba, Juan Brian Joel",
+        "photo":"https://robohash.org/user3",
+        "interests" : "Me gusta el asado, hacer musica y jugar a la pelota con amigos los fines de semana",
+        "linktoGit" : "https://github.com/bjc00285",
+        "years":"27 Años"
+    },
+    {
+        "name": "Macedo, Facundo Emanuel",
+        "photo":"https://robohash.org/user4",
+        "interests" : "Hola, soy Facundo Macedo, tengo 24 años, vivía en San Miguel de Tucumán y estudié arte en la UNT, ahora estoy interesado en el diseño y desarrollo de videojuegos.",
+        "linktoGit" : "https://github.com/Makedok7",
+        "years":"24 Años"
+    },
+    {
+        "name": "Palacios, Carlos Javier",
+        "photo":"https://robohash.org/user5",
+        "interests" : "Mi nombre es Carlos Javier Palacios, me gusta escribir, crear historias, jugar y eventualmente programar.",
+        "linktoGit" : "https://github.com/CarlosbienPio",
+        "years":"Numero edad"
+    },
+    {
+        "name": "Sosa, Rodrigo Emanuel Lozano",
+        "photo":"https://robohash.org/user6",
+        "interests" : "Hola, soy Rodrigo, soy tranquilo, me gusta la programación y los videojuegos.",
+        "linktoGit" : "https://github.com/Rel06",
+        "years":"Numero edad"
+    }
+]
