@@ -1,20 +1,26 @@
 [
     {
-        "palabra":"HORMIGA"
+        "palabra":"HORMIGA",
+        "descripcion":"Insecto que vive en grandes colonias"
     },
     {
-        "palabra":"PERRO"
+        "palabra":"PERRO",
+        "descripcion":"El mejor amigo del hombre"
     },
     {
-        "palabra":"ELEFANTE"
+        "palabra":"ELEFANTE",
+        "descripcion":"Animal que vive en la sabana africana y algunas partes de asia"
     },
     {
-        "palabra":"CASA"
+        "palabra":"IGLU",
+        "descripcion":"Casa construida a partir de bloques de hielo"
     },
     {
-        "palabra":"CALLE"
+        "palabra":"CALLE",
+        "descripcion":"Por donde transitan Vehiuclos"
     },
     {
-        "palabra":"CIUDAD"
+        "palabra":"CIUDAD",
+        "descripcion":"Conjunto de casas y edificios"
     }
 ]
