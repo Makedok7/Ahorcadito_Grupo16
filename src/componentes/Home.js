@@ -28,7 +28,7 @@ export default function Home() {
                 </div>
                 <div className="row ">
                     <section id="img1" className='col'>
-                        <img src="../public/images/LogoJuego" width="350" height="350" alt="LogoJuego" className='img-fluid rounded' />
+                        <img src="../images/LogoJuego" width="350" height="350" alt="LogoJuego" className='img-fluid rounded' />
                     </section>
                     <aside id="reglas" className='col '>
                         <h2>Reglas</h2>
