@@ -28,17 +28,17 @@ export default function Home() {
                 </div>
                 <div className="row ">
                     <section id="img1" className='col'>
-                        <img src="../images/LogoJuego" width="350" height="350" alt="LogoJuego" className='img-fluid rounded' />
+                        <img src="../images/LogoJuego.jpg" width="350" height="350" alt="LogoJuego" className='img-fluid rounded' />
                     </section>
                     <aside id="reglas" className='col '>
                         <h2>Reglas</h2>
                         <ul className='list-inline'>
-                            <li>Se mostrará el inicio y el fin de una palabra, y tienes que adivinar cuál es (LETRA por LETRA).</li>
-                            <li>Debes indicar una letra a la vez</li>
-                            <li>Si elijes una letra que no existe en la palabra, entonces perderás una oportunidad</li>
-                            <li>Cada vez que falles al elegir una letra, se dibujará una parte de una figura</li>
-                            <li>Si fallas los suficiente, la figura se completará y PERDERÁS</li>
-                            <li>Si logras adivinar todas las letras de la palabra, entonces GANARÁS</li>
+                            <li>Se mostrarán pistas de una palabra, y tienes que adivinar cuál es (LETRA por LETRA).</li>
+                            <li>Debes indicar una letra a la vez.</li>
+                            <li>Si elijes una letra que no existe en la palabra, entonces perderás una oportunidad.</li>
+                            <li>Cada vez que falles al elegir una letra, se dibujará una parte de una figura.</li>
+                            <li>Si fallas los suficiente, la figura se completará y PERDERÁS!</li>
+                            <li>Si logras adivinar todas las letras de la palabra, entonces GANARÁS!</li>
                         </ul>
                     </aside>
                 </div>
