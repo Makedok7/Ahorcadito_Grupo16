@@ -34,11 +34,11 @@ export default function Home() {
                         <h2>Reglas</h2>
                         <ul className='list-inline'>
                             <li>Se mostrarán pistas de una palabra, y tienes que adivinar cuál es (LETRA por LETRA).</li>
-                            <li>Debes indicar una letra a la vez</li>
-                            <li>Si elijes una letra que no existe en la palabra, entonces perderás una oportunidad</li>
-                            <li>Cada vez que falles al elegir una letra, se dibujará una parte de una figura</li>
-                            <li>Si fallas los suficiente, la figura se completará y PERDERÁS</li>
-                            <li>Si logras adivinar todas las letras de la palabra, entonces GANARÁS</li>
+                            <li>Debes indicar una letra a la vez.</li>
+                            <li>Si elijes una letra que no existe en la palabra, entonces perderás una oportunidad.</li>
+                            <li>Cada vez que falles al elegir una letra, se dibujará una parte de una figura.</li>
+                            <li>Si fallas los suficiente, la figura se completará y PERDERÁS!</li>
+                            <li>Si logras adivinar todas las letras de la palabra, entonces GANARÁS!</li>
                         </ul>
                     </aside>
                 </div>
