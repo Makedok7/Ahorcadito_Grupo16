@@ -87,7 +87,7 @@ export default function Juego() {
     function restablecerJuego() {
         //Devuelve todos los campos modificados a sus valores iniciales
         setIntentos(1)
-        document.getElementById("ahorcadito").src = '../images/ahorcadito/0.jpg'
+        document.getElementById("ahorcadito").src = '../images/ahorcadito/0.png'
         document.getElementById("resultado").className = "alert alert-secondary"
         document.getElementById("resultadoTexto").innerHTML = "Resultado"
         //Se recorren los botones buscandolos por su id y se los devuelve a su valor inicial
@@ -114,7 +114,7 @@ export default function Juego() {
         //Cambia la imagen segun los intentos
         if (intentos <= 6) {
             let imagen = document.getElementById("ahorcadito")
-            imagen.src = '../images/ahorcadito/' + auxiliarIntentos + '.jpg'
+            imagen.src = '../images/ahorcadito/' + auxiliarIntentos + '.png'
         }
     }
 
@@ -126,7 +126,7 @@ export default function Juego() {
                     <h1 className='text-center' id='resultadoTexto'>Resultado</h1>
                 </div>
                 <div className='text-center'>
-                    <img src='../images/ahorcadito/0.jpg' id='ahorcadito' alt='Ahorcadito' />
+                    <img src='../images/ahorcadito/0.png' id='ahorcadito' alt='Ahorcadito' />
                 </div>
                 <h1 className='bg-dark text-center text-info'>
                     {palabraEscondida.join(" ")}
