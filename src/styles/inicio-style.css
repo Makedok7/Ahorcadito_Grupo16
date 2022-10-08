@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Balsamiq+Sans&display=swap');
 .container {
-    background-color: #0eccd3;
+    background-color: #630fd1;
     border-radius: 25px;
     margin-left: 7%;
     margin-right: 7%;
@@ -30,7 +30,7 @@
 }
 
 #nav :hover {
-    background-color: #0eccd3;
+    background-color: #7a0ed3;
     color: rgb(41, 41, 41);
 }
 
@@ -41,10 +41,14 @@
     font-family: Lobster, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+.link-button {
+    text-decoration: none;
+}
+
 .boton {
     display: inline-flex;
     border-radius: 20px;
-    background-color: darkslategray;
+    background-color: rgb(192, 21, 21);
     color: aliceblue;
     width: 120px;
     height: 70px;
@@ -53,12 +57,13 @@
     justify-content: center;
     cursor: pointer;
     text-transform: uppercase;
+    text-decoration: none;
     transition: .3s ease all;
 }
 
 .boton:hover {
-    background-color: rgb(226, 226, 226);
-    color: rgb(34, 34, 34);
+    background-color: rgb(255, 225, 55);
+    color: rgb(7, 7, 7);
 }
 
 #img1 {
@@ -88,7 +93,9 @@ section {
 aside {
     flex: 0.35;
     text-align: center;
-    padding: 5%;
+    padding: 100px;
     font-family: Balsamiq Sans;
     font-size: 20px;
+    background-color: rgb(91, 38, 112);
+    border-radius: 100px;
 }

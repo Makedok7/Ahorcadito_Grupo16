@@ -4,10 +4,12 @@ import "../styles/Juego.css"
 import letras from '../json/letras.json'
 import palabras from '../json/palabras.json'
 
+
 export default function Juego() {
 
     const [palabraOriginal, setPalabraOriginal] = useState([])
     const [palabraEscondida, setPalabraEscondida] = useState([])
+    const [palabraDescripcion, setPalabraDescripcion] = useState([])
     const [intentos, setIntentos] = useState(1)
     //El auxiliar se usa para tener un mejor control de los cambios del ahorcadito por los intentos y sus comprobaciones
     let auxiliarIntentos = 0 
@@ -17,9 +19,12 @@ export default function Juego() {
     }, []);
 
     function generarPalabra() {
-        //Se elige una palabra al azar del json palabras y la asigna a palabraOriginal 
-        let palabraRandom = Array.from(palabras[Math.floor(Math.random() * palabras.length)].palabra)
+        //Se elige una palabra al azar del json palabras y la asigna a palabraOriginal
+        let numberRandom = [Math.floor(Math.random() * palabras.length)]
+        let palabraRandom = Array.from(palabras[numberRandom].palabra)
+        let descripcionRandom = Array.from(palabras[numberRandom].descripcion)
         setPalabraOriginal([...palabraRandom])
+        setPalabraDescripcion([...descripcionRandom])
         //Manda la misma palabra elegida al azar
         esconderPalabra(palabraRandom)
         restablecerJuego()
@@ -126,6 +131,11 @@ export default function Juego() {
                 <h1 className='bg-dark text-center text-info'>
                     {palabraEscondida.join(" ")}
                 </h1>
+                <div>
+                <h3 className='bg-dark text-center text-info'>
+                    {palabraDescripcion}
+                </h3>
+                </div>
                 <div className='text-center'>
                     <button type='button' className='btn btn-info ' onClick={() => generarPalabra()}>
                         Generar Palabra
