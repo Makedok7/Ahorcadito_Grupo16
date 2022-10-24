@@ -119,7 +119,7 @@ export default function Juego() {
     }
 
     return (
-        <div className="bg-dark" >
+        <div className="bg-dark" style={{ height: "800px" }}>
             {Nav()}
             <div>
                 <div className='alert alert-secondary' id='resultado'>
