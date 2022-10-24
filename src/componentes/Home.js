@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
     return (
-        <div className='bg-dark' style={{ height: "800px" }}>
+        <div className='bg-dark' style={{ height: "1000px" }}>
             {Nav()}
             <div id="div1" className="container">
                 <div className="Titulo" id="titulo">
